@@ -1,0 +1,19 @@
+name: CI workflow
+
+on:
+  push:
+    branches:  main branch
+  pull_request:
+    branches:  main branch
+
+jobs:
+  build:
+    runs-on: {placeholder}
+    container: {placeholder}
+    steps:
+      - name: {placeholder}
+        uses: {placeholder}
+      - name: {placeholder}
+        run: |
+        {first command}
+        {second command}
