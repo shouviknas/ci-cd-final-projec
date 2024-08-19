@@ -1,4 +1,3 @@
-# 1 Create cleanup Tekton task
 ---
 apiVersion: tekton.dev/v1beta1
 kind: Task
@@ -16,7 +15,7 @@ spec:
           value: $(workspaces.source.path)
       workingDir: $(workspaces.source.path)
       securityContext:
-        runAsNonRoot: false  # Corrected typo from flase to false
+        runAsNonRoot: false
         runAsUser: 0
       script: |
         #!/usr/bin/env sh
@@ -35,7 +34,6 @@ spec:
           rm -rf "${WORKSPACE_SOURCE_PATH}"/..?*
         fi
 
-# 2 Create test Tekton task
 ---
 apiVersion: tekton.dev/v1beta1
 kind: Task
